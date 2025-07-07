@@ -1,218 +1,108 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #1a1a1a;
-      color: #e0e0e0;
-      font-family: 'Fredoka One', cursive;
-      text-align: center;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    .star-layer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      box-shadow: 0 0 5px white;
-      transition: opacity 0.8s ease-in-out;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo-container {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo {
-      font-size: 3em;
-      font-weight: bold;
-      opacity: 1;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .section {
-      padding: 80px 0;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-
-    .section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .text {
-      width: 100%;
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .video {
-      width: 100%;
-    }
-
-    .video iframe {
-      width: 100%;
-      height: 250px;
-      border-radius: 10px;
-    }
-
-    .footer {
-      padding: 50px;
-      text-align: center;
-    }
-
-    .qr {
-      width: 200px;
-      height: 200px;
-      background: #333;
-      margin: auto;
-    }
-
-    .interactive {
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .interactive:hover {
-      transform: scale(1.02);
-    }
-
-    @media(min-width: 768px) {
-      .text { width: 50%; }
-      .video { width: 50%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #1a1a1a; color: #e0e0e0; font-family: 'Fredoka One', cursive; text-align: center; overflow-x: hidden; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+        .logo-container { position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+        .logo { font-size: 3em; font-weight: bold; opacity: 1; transition: opacity 1s ease-in-out; position: relative; z-index: 2; }
+        .hidden { opacity: 0; pointer-events: none; }
+        .star { position: absolute; background: white; border-radius: 50%; box-shadow: 0 0 5px white; transition: opacity 0.8s ease-in-out; }
+        .section { padding: 80px 0; opacity: 0; transform: translateY(50px); transition: opacity 1s ease-in-out, transform 1s ease-in-out; font-size: 1.5em; font-weight: bold; }
+        .section.show { opacity: 1; transform: translateY(0); }
+        .content { display: flex; align-items: center; justify-content: space-between; }
+        .text { width: 50%; text-align: left; }
+        .video { width: 50%; }
+        .video iframe { width: 100%; height: 250px; border-radius: 10px; }
+        .footer { padding: 50px; text-align: center; }
+        .qr { width: 200px; height: 200px; background: #333; margin: auto; }
+        .interactive { cursor: pointer; transition: transform 0.3s ease-in-out; }
+        .interactive:hover { transform: scale(1.1); }
+    </style>
 </head>
 <body>
-
-  <!-- звезды под контентом -->
-  <div class="star-layer" id="star-layer"></div>
-
-  <!-- контент -->
-  <div class="logo-container" id="logo-container">
-    <div class="logo" id="logo">Renshi</div>
-  </div>
-
-  <div class="container">
-    <div class="section intro interactive" id="intro">
-      Творче портфоліо до вступу. 
-      Я Власенко Лев, абітурієнт вашого колледжу, та тут я хочу продемонструвати свої роботи.
-      Абсолютно все що ви тут побачите — зроблено мною в After Effects. Всі ідеї мої та зроблені без допомоги.
-      Також цей сайт зроблений мною, як невеличкий плюсик до розуміння дизайну.
+    <div class="logo-container" id="logo-container">
+        <div class="logo" id="logo">Renshi</div>
     </div>
+    <div class="container">
+        <div class="section intro interactive" id="intro">Творче портфоліо до вступу. 
+            Я Власенко Лев, абітурієнт вашого колледжу, та тут я хочу продемонструвати свої роботи.
+            Абсолютно все що ви тут побачите - зроблено мною в After Effects. Всі ідеї мої та зроблені без допомоги.
+            Також цей сайт зроблений мною, як невеличкий плюсик до розуміння дизайну
+        </div>
 
-    <div class="section content interactive">
-      <div class="text">Як я вважаю, одна з моїй накращих робіт, але доволі стара:</div>
-      <div class="video"><iframe src="https://www.youtube.com/embed/j6YbM-Jv5V4" frameborder="0" allowfullscreen></iframe></div>
+<div class="section content interactive">
+    <div class="text">Як я вважаю, одна з моїй накращих робіт, але доволі стара:</div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/j6YbM-Jv5V4" frameborder="0" allowfullscreen></iframe></div>
+</div>
+<div class="section content interactive">
+    <div class="text">Теж стара, але непогана робота:</div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/u4HgK9D9TNA" frameborder="0" allowfullscreen></iframe></div>
+</div>
+<div class="section content interactive">
+    <div class="text">Ця робота була зроблена для експерименту зі стилізацією деяких кадрів, та типографією:</div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/kTbXi31BbSY" frameborder="0" allowfullscreen></iframe></div>
+</div>
+<div class="section content interactive">
+    <div class="text">Одна з моїх найновіших робіт. В ній я старався зробити стилізацію в кожному кадрі:</div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/AVU4GgXfz9Y" frameborder="0" allowfullscreen></iframe></div>
+</div>
+<div class="section content interactive">
+    <div class="text">Скоро тут буде мій дуже великий проект, який я роблю вже доволі багато часу:</div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/Jaiw7GkYxUQ" frameborder="0" allowfullscreen></iframe></div>
+</div>
+
+        <div class="section footer interactive">
+            <p>Дякую за перегляд мого портфоліо. З нетерпінням чекаю на ваш вердикт :)</p>
+            <div class="qr"></div>
+        </div>
     </div>
-
-    <div class="section content interactive">
-      <div class="text">Теж стара, але непогана робота:</div>
-      <div class="video"><iframe src="https://www.youtube.com/embed/u4HgK9D9TNA" frameborder="0" allowfullscreen></iframe></div>
-    </div>
-
-    <div class="section content interactive">
-      <div class="text">Ця робота була зроблена для експерименту зі стилізацією деяких кадрів, та типографією:</div>
-      <div class="video"><iframe src="https://www.youtube.com/embed/kTbXi31BbSY" frameborder="0" allowfullscreen></iframe></div>
-    </div>
-
-    <div class="section content interactive">
-      <div class="text">Одна з моїх найновіших робіт. В ній я старався зробити стилізацію в кожному кадрі:</div>
-      <div class="video"><iframe src="https://www.youtube.com/embed/AVU4GgXfz9Y" frameborder="0" allowfullscreen></iframe></div>
-    </div>
-
-    <div class="section content interactive">
-      <div class="text">Скоро тут буде мій дуже великий проект, який я роблю вже доволі багато часу:</div>
-      <div class="video"><iframe src="https://www.youtube.com/embed/Jaiw7GkYxUQ" frameborder="0" allowfullscreen></iframe></div>
-    </div>
-
-    <div class="section footer interactive">
-      <p>Дякую за перегляд мого портфоліо. З нетерпінням чекаю на ваш вердикт :)</p>
-      <div class="qr"></div>
-    </div>
-  </div>
-
-  <script>
-    // генерация звезд
-    const starLayer = document.getElementById('star-layer');
-    for (let i = 0; i < 100; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      const size = Math.random() * 3 + 2;
-      star.style.width = `${size}px`;
-      star.style.height = `${size}px`;
-      star.style.top = `${Math.random() * 100}vh`;
-      star.style.left = `${Math.random() * 100}vw`;
-      star.dataset.speed = Math.random() * 2 + 1;
-      starLayer.appendChild(star);
-    }
-
-    // анимация звезд
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      document.querySelectorAll('.star').forEach(star => {
-        const speed = star.dataset.speed;
-        star.style.transform = `translateY(${-scrollY / speed}px)`;
-        star.style.opacity = 1 - scrollY / 1000;
-      });
-
-      document.getElementById('logo').style.opacity = 1 - scrollY / 300;
-    });
-
-    // анимация появления блоков
-    const sections = document.querySelectorAll('.section');
-    const revealOnScroll = () => {
-      const scrollY = window.scrollY;
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        const progress = Math.min(1, (window.innerHeight - rect.top) / window.innerHeight);
-        sec.style.opacity = progress;
-        sec.style.transform = `translateY(${50 * (1 - progress)}px)`;
-      });
-    };
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
-  </script>
+    
+    <script>
+        // Создание звезд
+        const logoContainer = document.getElementById('logo-container');
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement('div');
+            star.classList.add('star');
+            let size = Math.random() * 3 + 2;
+            star.style.width = ${size}px;
+            star.style.height = ${size}px;
+            star.style.top = ${Math.random() * 100}vh;
+            star.style.left = ${Math.random() * 100}vw;
+            star.dataset.speed = Math.random() * 2 + 1;
+            logoContainer.appendChild(star);
+        }
+        
+        // Анимация звезд при прокрутке
+        window.addEventListener('scroll', () => {
+            let scrollY = window.scrollY;
+            document.querySelectorAll('.star').forEach(star => {
+                let speed = star.dataset.speed;
+                star.style.transform = translateY(${-scrollY / speed}px);
+                star.style.opacity = 1 - scrollY / 500;
+            });
+            document.getElementById('logo').style.opacity = 1 - scrollY / 300;
+        });
+        
+        // Анимация появления блоков
+        const sections = document.querySelectorAll('.section');
+        const revealOnScroll = () => {
+            let scrollY = window.scrollY;
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                let progress = Math.min(1, (window.innerHeight - rect.top) / window.innerHeight);
+                sec.style.opacity = progress;
+                sec.style.transform = translateY(${50 * (1 - progress)}px);
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
 </body>
 </html>
